@@ -1,0 +1,55 @@
+html {
+	overflow-y: scroll;
+}
+
+/* .toprow */
+.toprow {
+	background: #bf1942;
+	box-shadow: 0px 4px 0px #333, 0px 4px 4px #333;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+/* .toprow-header */
+.toprow-header {
+	color: #eee;
+	font-size: 60px;
+}
+
+.toprow-header:hover {
+	color: #fff;
+}
+
+.toprow-header:active {
+	color: #fff;
+}
+
+.toprow-header:visited {
+	color :#fff;
+}
+
+/* .toprow-text */
+.toprow-text {
+	color: #eee;
+	font-size: 40px;
+	margin-top: 20px;
+}
+
+.toprow-text:hover {
+	color: #fff;
+}
+
+.toprow-text:active {
+	color: #fff;
+}
+
+.toprow-text:visited {
+	color :#fff;
+}
+
+/* .toprow-message */
+.toprow-message {
+	color: #eee;
+	font-size: 18px;
+	margin-top: 42px;
+}

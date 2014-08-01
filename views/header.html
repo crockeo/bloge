@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/public/css/main.css">
+	</head>
+
+	<body>
+		<div class="container-fluid toprow">
+			<a class="col-md-2 text-center toprow-header" href="/">Home</a>
+			<a class="col-md-2 text-center toprow-text" href="/post/new">New</a>
+
+			{{if .Username}}
+				<a class="col-md-2 text-center toprow-text" href="/logout">Logout</a>
+			{{else}}
+				<a class="col-md-2 text-center toprow-text" href="/login">Login</a>
+				<a class="col-md-2 text-center toprow-text" href="/register">Register</a>
+			{{end}}
+
+			{{with .Username}}
+				<p class="col-md-2 toprow-message">Logged in as {{.}}</p>
+			{{end}}
+
+			{{with .Message}}
+				<p class="text-justify toprow-message">
+					{{.}}
+				</p>
+			{{end}}
+		</div>
+
+		<div class="container maincontainer">

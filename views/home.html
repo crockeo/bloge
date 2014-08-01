@@ -1,0 +1,29 @@
+{{with .Data.Posts}}
+	<h1>Posts</h1>
+
+	{{range .}}
+		<div class="row">
+			<div class="col-md-offset-1">
+				<h3><a href="/post/{{.Id}}">{{.Title}}</a></h3>
+
+				<h5>
+					<small>By {{.Author}}</small>
+				</h5>
+
+				<div class="row">
+					<p class="col-md-4 text-justify">
+						{{.Body}}
+					</p>
+				</div>
+
+				<h6>
+					<small>{{.Written}}</small>
+				</h6>
+
+				<hr class="col-md-2 col-md-offset-1">
+			</div>
+		</div>
+	{{end}}
+{{else}}
+	<h1>No Posts Yet</h1>
+{{end}}
