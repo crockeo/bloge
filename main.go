@@ -4,11 +4,21 @@ import (
 	"github.com/crockeo/bloge/auth"
 	"github.com/crockeo/bloge/controllers"
 	"github.com/crockeo/bloge/database"
+	"github.com/crockeo/bloge/recovery"
 	"github.com/zenazn/goji"
+	"github.com/zenazn/goji/web/middleware"
 	"regexp"
 )
 
+var nologging bool = true
+
 func main() {
+	// Disabling some built-in middleware
+	goji.Abandon(middleware.Recoverer)
+	goji.Abandon(middleware.Logger)
+
+	// Using my own custom middleware
+	goji.Use(recovery.Middleware)
 	goji.Use(database.Middleware())
 	goji.Use(auth.Middleware())
 
